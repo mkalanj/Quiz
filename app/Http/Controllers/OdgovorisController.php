@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Kategorijas;
-use Illuminate\Http\Request;
 
-class KategorijasController extends Controller
+use Illuminate\Http\Request;
+use App\Odgovoris;
+use App\Pitanjas;
+
+class OdgovorisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +15,8 @@ class KategorijasController extends Controller
      */
     public function index()
     {
-          $kategorija = Kategorijas::all();
-        return view('kategorijas.index',compact('kategorija'));
+         $odgovori = Odgovoris::all();
+        return view('odgovoris.index',compact('odgovori'));
     }
 
     /**
@@ -22,12 +24,14 @@ class KategorijasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
-    public function create()
+    public function create(Odgovoris $odgovoris)
     {
-        return view('kategorijas.create');
+        //return view('pitanjas.create');
+        
+        $pitanja= Pitanjas::all();
+       
+        return view('odgovoris.create', compact('odgovoris', 'pitanja'));
     }
-    
 
     /**
      * Store a newly created resource in storage.
@@ -36,24 +40,19 @@ class KategorijasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    
     {
-        $this->validate($request,[
-          'Naziv_cat'=>'required|string|max:255',
-          
-        ]);
-        Kategorijas::create($request->all());
-        return redirect()->route('kategorijas.index')->with('success','Kategorija uspjesno kreirana');
-    }
+          $pitanja= Pitanjas::all();
 
-    public function my_first_api(){
-        
-        $data = [
-            'id' => '$id',
-            'Naziv_cat' => '$Naziv_cat'
-        ];
-        
-        return response()->json($data);
+         $this->validate($request,[
+          'pitanja_id'=>'required|integer',
+          'odgovor_a'=>'required|string|max:255',
+            'odgovor_b'=>'required|string|max:255', 
+             'odgovor_c'=>'required|string|max:255',
+             'odgovor_d'=>'required|string|max:255',
+             
+          ]);
+        Odgovoris::create($request->all());
+        return redirect()->route('odgovoris.index')->with('success','Odgovori uspjesno kreirana');
     }
 
     /**
@@ -64,8 +63,8 @@ class KategorijasController extends Controller
      */
     public function show($id)
     {
-            $kategorija = Kategorijas::find($id);
-      return view('kategorijas.show',compact('kategorija'));
+        $pitanja = Pitanjas::find($id_pitanja);
+      return view('pitanjas.show',compact('pitanja'));
     }
 
     /**
@@ -76,8 +75,7 @@ class KategorijasController extends Controller
      */
     public function edit($id)
     {
-        $kategorija = Kategorijas::find($id);
-        return view('kategorijas.edit',compact('kategorija'));
+        //
     }
 
     /**
@@ -89,13 +87,7 @@ class KategorijasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-          'Naziv_cat' => 'required',
-        
-        ]);
-        Kategorijas::find($id)->update($request->all());
-        return redirect()->route('kategorijas.index')->with('success','Kategorija uspjesno izmjenjena');
-    
+        //
     }
 
     /**
@@ -106,8 +98,6 @@ class KategorijasController extends Controller
      */
     public function destroy($id)
     {
-        Kategorijas::find($id)->delete();
-        return redirect()->route('kategorijas.index')->with('success','Kategorija uspjesno obrisana');
-    
+        //
     }
 }

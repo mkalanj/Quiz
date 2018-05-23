@@ -19,4 +19,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::resource('kategorijas','KategorijasController');
+
+Route::get('pitanjas/create/{kategorijas_id?}', 'PitanjasController@create');
+Route::get('pitanjas/edit/{id_pitanja?}', 'PitanjasController@edit');
+Route::resource('pitanjas','PitanjasController');
+
+Route::get('odgovoris/create/{pitanja_id?}', 'OdgovorisController@create');
+//Route::get('pitanjas/edit/{id_pitanja?}', 'PitanjasController@edit');
+Route::resource('odgovoris','OdgovorisController');
+
+Route::get('kategorijas', 'KategorijasController@my_first_api');
