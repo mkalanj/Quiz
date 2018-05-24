@@ -30,4 +30,3 @@ Route::get('odgovoris/create/{pitanja_id?}', 'OdgovorisController@create');
 //Route::get('pitanjas/edit/{id_pitanja?}', 'PitanjasController@edit');
 Route::resource('odgovoris','OdgovorisController');
 
-Route::get('kategorijas', 'KategorijasController@my_first_api');

@@ -46,7 +46,7 @@ class KategorijasController extends Controller
         return redirect()->route('kategorijas.index')->with('success','Kategorija uspjesno kreirana');
     }
 
-    public function my_first_api(){
+    /*public function my_first_api(){
         
         $data = [
             'id' => '$id',
@@ -54,7 +54,7 @@ class KategorijasController extends Controller
         ];
         
         return response()->json($data);
-    }
+    }*/
 
     /**
      * Display the specified resource.
