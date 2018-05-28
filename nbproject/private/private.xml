@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/Quiz/app/Http/Controllers/ApiController.php</file>
+            <file>file:/C:/xampp/htdocs/Quiz/config/app.php</file>
             <file>file:/C:/xampp/htdocs/Quiz/routes/web.php</file>
-            <file>file:/C:/xampp/htdocs/Quiz/app/Pitanjas.php</file>
+            <file>file:/C:/xampp/htdocs/Quiz/storage/framework/views/1a2da6fe21c2a9c8b12468be2050660619c0105d.php</file>
             <file>file:/C:/xampp/htdocs/Quiz/routes/api.php</file>
-            <file>file:/C:/xampp/htdocs/Quiz/app/Http/Controllers/KategorijasController.php</file>
-            <file>file:/C:/xampp/htdocs/Quiz/app/Http/Controllers/PitanjasController.php</file>
+            <file>file:/C:/xampp/htdocs/Quiz/bootstrap/app.php</file>
+            <file>file:/C:/xampp/htdocs/Quiz/database/factories/ModelFactory.php</file>
         </group>
     </open-files>
 </project-private>
