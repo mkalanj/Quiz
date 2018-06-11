@@ -3,7 +3,8 @@
   <div class="row">
   <div class="col-sm-12">
     <div class="full-right">
-      <h2> ODGOVORI </h2>
+      <h2 align="center"> ODGOVORI </h2>
+      <br>
     </div>
   </div>
   </div>
@@ -14,7 +15,7 @@
       </div>
   @endif
 
-  <table class="table table-bordered">
+  <table class="table table-striped">
     <tr>
       <th with="80px">ID</th>
       <th>ID pitanja</th>
@@ -50,6 +51,15 @@
       </tr>
     @endforeach
   </table>
+  
+    <div class="text-center">
+        <div class="btn-group-vertical">
+   <a href="http://localhost:8000"  class="btn btn-info ">Pocetna stranica</a>
+ <br>
+ <a href="http://localhost:8000/pitanjas"  class="btn btn-info ">Pitanja</a>
+
+     </div>
+      </div>
 @endsection
 
 

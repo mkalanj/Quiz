@@ -16,4 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/pitanja/{id_pitanja}', 'ApiPController@show');
+Route::get('/odgovori/{id_odgovoras}', 'ApiOController@show');
+
 Route::get('/kategorija/{id}', 'ApiController@show');

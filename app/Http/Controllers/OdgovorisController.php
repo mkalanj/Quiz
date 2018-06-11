@@ -61,10 +61,10 @@ class OdgovorisController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_odgovoras)
     {
-        $pitanja = Pitanjas::find($id_pitanja);
-      return view('pitanjas.show',compact('pitanja'));
+        $odgovori = Odgovoris::find($id_odgovoras);
+      return view('odgovoris.show',compact('odgovori'));
     }
 
     /**

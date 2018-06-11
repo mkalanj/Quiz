@@ -27,6 +27,7 @@ class ApiController extends Controller
      }
      public function show($id)
      {
+       
         $kategorija = Kategorijas::find($id);
         return response()->json($kategorija);
      }
